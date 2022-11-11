@@ -1,0 +1,64 @@
+<html class="betting-pg">
+  <h4 style="background-color: black; color: #f1f1f1; font-weight: bold"> Place your bet on dice number (1 to 6) </h4>
+  <% if session[:message] %>
+    <h3> <%= session[:message] %> </h3>
+    <% session[:message] = nil %>
+  <% end %>
+
+
+  <style>
+    .bettingSec  {float: left;}
+    .sessionData {float: left;}
+    .bettingSec  {width: 50%; height: 20%;}
+    .sessionData {width: 50%; height: 20%;}
+    .win {float: left;}
+    .loss {float: left;}
+    .profit {float: right;}
+  </style>
+
+  <form action="/bet" method="post">
+    <div style="text-align:center;">
+      <div class="bettingSec">
+        <br>
+        Bet money <input type='text' name="money"> </input><br><br>
+        on <span style="margin-left:3em;" ></span><input type='text' name="number"> </input><br><br>
+         <input type=submit value="Bet">
+     
+      </div>
+
+      <div class="sessionData" style="float: right;">
+        Total win<br>
+        <input type='text' name='win' value=<%= @winSess %> disabled></input><br>
+        Total loss<br>
+        <input type='text' name='loss' value=<%= @lossSess %> disabled ></input><br>
+        Total profit<br>
+        <input type='text' name='profit' value=<%= @profitSess %> disabled ></input><br>
+      </div>
+      <br><br><br>
+    </div>
+   <p style= "color: black; font-weight: bold; font-size:20px"> account </p>     
+    <div class"accountHistory">
+      <table>
+        <tr>
+        <div class ="abc">
+        <td width=50%>
+           Total Win <br>
+           <input type='text' name='totalWins' value=<%= @totalWinsdb %> disabled></input><br>
+        </td>
+        <td width=50%>
+          Total Loss <br>
+          <input type='text' name='totalLoss' value=<%= @totalLossdb %> disabled></input><br>
+        </td>
+        <td width=50%>
+          Total Profit <br>
+          <input type='text' name='totalProfit' value=<%= @totalProfitdb %> disabled></input><br>
+        </td>
+        </td>
+        </tr>
+      </table>
+      <br><br>
+     <input type=submit value="LogOut" formaction='/logout' style="float:inline-end">
+    </div>
+  </form><br>
+ 
+</html>
