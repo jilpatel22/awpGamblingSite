@@ -75,17 +75,13 @@ input[type=text]:focus, input[type=password]:focus {
   <h3> <%= session[:message] %> </h3>
   <% session[:message] = nil %>
 <% end %>
-  <form action="/login" method="post">
-    <h1>Login</h1>
-
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
-
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-
-    <button type="submit" class="btn" value="Logon">Login</button>
+  <form action="/login" method="get">
+    <button type="submit" class="btn" value="Logon">Logon to gamble</button>
   </form>
+  <form method="get" action="/signup">
+    <button type="submit" class="btn" value="Sign Up">Sign up to create account</button>
+  </form>
+  
 </div>
 
 

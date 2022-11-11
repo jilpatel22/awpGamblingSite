@@ -16,7 +16,7 @@ end
 
 # Navigates the user to the login page when there is no absolute path mentioned in url.
 get '/' do
-  erb :login
+  erb :welcome
 end
 
 # When the request comes from the signup page we will check whether the username exists or not. If it exists then it will return an error message.
